@@ -19,11 +19,12 @@ public class CoroutineSample3 : MonoBehaviour
 
     private IEnumerator StartInfiniteRotationAsync()
     {
-        //var wait = new WaitForSeconds(_delayTime);
+        var wait = new WaitForSeconds(_delayTime);
         while (true)
         {
             _transform.Rotate(_speed*Time.deltaTime*Vector3.up);
-            yield return new WaitForSeconds(_delayTime);
+            //yield return new WaitForSeconds(_delayTime);
+            yield return wait;
         }
     }
 }
